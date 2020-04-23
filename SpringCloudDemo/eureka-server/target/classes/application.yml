@@ -1,0 +1,12 @@
+#端口号
+server:
+  port: 8761
+#eureka配置
+eureka:
+  instance:
+    hostname: eureka-server  #指定Eureka服务端的IP
+  client:
+    register-with-eureka: false   #表示是否将服务注册到Eureka服务端(默认是true)当搭建eureka集群的时候将参数改为true；
+    fetch-registry: false  #表示是否从Eureka服务端获取服务信息(默认是true)当搭建eureka集群的时候将参数改为true；
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
